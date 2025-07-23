@@ -38,6 +38,10 @@ cd
 git clone "https://github.com/cheseo/node-example";
 systemctl --user enable --now node.service
 loginctl enable-linger
+
+# apparantly systemctl --user doesn't work here, so have to do this manually
+mkdir -p ~/.config/systemd/user/default.target.wants/
+ln -s /etc/xdg/systemd/user/node.service ~/.config/systemd/user/default.target.wants/
 EOF
 
 
