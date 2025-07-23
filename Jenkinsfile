@@ -8,9 +8,7 @@ pipeline {
 		}
 		stage('deploy') {
 			steps {
-				withCredentials([sshUserPrivateKey(credentialsId: "node-ssh", keyFileVariable: 'keyfile')]) {
-					sh 'ssh -i ${keyfile} ubuntu@node.ec2.ashwink.com.np ./update'
-				}
+				sh 'curl -H "x-terminate: true" https://node.ec2.ashwink.com.np'
 			}
 		}
 	}
