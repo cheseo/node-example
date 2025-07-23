@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('prelude'){
 			steps {
-				sh 'apt install -y ssh'
+				sh 'apk add openssh-client'
 			}
 		}
 		stage('build'){
