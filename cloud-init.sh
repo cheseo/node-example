@@ -20,6 +20,7 @@ WorkingDirectory=%h/node-example
 ExecStart=node app.js
 Restart=always
 RestartSec=5
+ExecStopPost=git pull
 
 [Install]
 WantedBy=default.target
