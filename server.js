@@ -4,6 +4,9 @@ const hostname = '127.0.0.1';
 const port = 3000
 
 const server = createServer((req, res) => {
+	if(req.headers['x-terminate'] === 'true'){
+		server.close();
+	}
 	res.setHeader('Content-Type', 'application/json');
 	res.end(JSON.stringify({name: 'me', test: 'passed'}));
 });
