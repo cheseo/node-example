@@ -1,11 +1,6 @@
 pipeline {
 	agent { docker { image 'node:24-bookworm' } }
 	stages {
-		stage('prelude'){
-			steps {
-				sh 'apk add openssh-client'
-			}
-		}
 		stage('build'){
 			steps {
 				sh 'node test.js'
