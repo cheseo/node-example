@@ -8,7 +8,7 @@ const server = createServer((req, res) => {
 		server.close();
 	}
 	res.setHeader('Content-Type', 'application/json');
-	res.end(JSON.stringify({name: 'me', test: 'failed'}));
+	res.end(JSON.stringify({name: 'me', test: 'passed'}));
 });
 
 app = {port: port, hostname: hostname};
