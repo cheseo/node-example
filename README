@@ -1,0 +1,17 @@
+Node example app to use Jenkins.
+
+*.js:
+ - The app
+
+*.tf:
+ - Provision a new EC2 instance and setup according to cloud-init.sh
+
+new-instance:
+ - Create new instance using terraform and update dns mapping.
+
+Jenkinsfile:
+ - Test the app, and if passed, instruct the app to update itself
+
+node.pub:
+ - The public ssh key that is uploaded to the instance.
+
